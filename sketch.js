@@ -2,7 +2,9 @@ let gridSize = 20; // Size of each cell
 let cols, rows;
 let colors = [];
 let colorPicker; // Declare a color picker variable
+let opacitySlider; // Declare an opacity slider variable
 let showGrid = true; // Variable to control grid visibility
+let gridOpacity = 255; // Default grid opacity
 let dialogOverlay; // Overlay for the custom dialog
 let promptActive = false; // Flag to indicate if confirmation prompt is active
 
@@ -26,6 +28,9 @@ function setup() {
   colorPicker = select('#colorPicker');
   colorPicker.value('#000000'); // Default color is black
 
+  opacitySlider = select('#opacitySlider');
+  opacitySlider.input(updateGridOpacity); // Attach the updateGridOpacity function
+
   dialogOverlay = select('#dialogOverlay'); // Select the dialog overlay
   select('#confirmButton').mousePressed(clearCanvas); // Confirm button clears the canvas
   select('#cancelButton').mousePressed(hideDialog); // Cancel button hides the dialog
@@ -39,7 +44,7 @@ function draw() {
     for (let j = 0; j < rows; j++) {
       fill(colors[i][j]);
       if (showGrid) {
-        stroke(0); // Show grid lines
+        stroke(0, 0, 0, gridOpacity); // Set grid opacity
       } else {
         noStroke(); // Hide grid lines
       }
@@ -73,6 +78,11 @@ function updateGrid() {
   if (mouseButton === RIGHT && x >= 0 && x < cols && y >= 0 && y < rows) {
     colors[x][y] = color(255);
   }
+}
+
+// Update grid opacity based on the slider value
+function updateGridOpacity() {
+  gridOpacity = opacitySlider.value();
 }
 
 // Initialize the grid with white color

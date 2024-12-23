@@ -29,11 +29,11 @@
     .controls label, .controls button {
       margin-top: 10px;
     }
-    .color-picker-container {
+    .color-picker-container, .opacity-slider-container {
       display: flex;
       align-items: center;
     }
-    .color-picker-container label {
+    .color-picker-container label, .opacity-slider-container label {
       margin-right: 10px;
     }
     .dialog-overlay {
@@ -48,10 +48,11 @@
       align-items: center;
     }
     .dialog-box {
-      background: white;
+      background: #f0f0f0; /* Grey background */
       padding: 20px;
       border-radius: 10px;
       text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -64,6 +65,10 @@
       <div class="color-picker-container">
         <label for="colorPicker">Pixel Color:</label>
         <input type="color" id="colorPicker">
+      </div>
+      <div class="opacity-slider-container">
+        <label for="opacitySlider">Grid Opacity:</label>
+        <input type="range" id="opacitySlider" min="0" max="255" value="255">
       </div>
     </div>
   </div>
