@@ -27,3 +27,6 @@ Allow users to add text to their pixel art, with customizable font and size.
 
 10. Shape Tools
 Add tools to draw basic shapes like circles, squares, and lines, which can be helpful for creating more complex designs.
+
+11. Background Color Picker
+Add a tool that fills out the background of the grid with a color
