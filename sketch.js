@@ -34,6 +34,10 @@ function setup() {
   dialogOverlay = select('#dialogOverlay'); // Select the dialog overlay
   select('#confirmButton').mousePressed(clearCanvas); // Confirm button clears the canvas
   select('#cancelButton').mousePressed(hideDialog); // Cancel button hides the dialog
+
+  // Add new elements for custom grid size
+  let applyGridSizeButton = select('#applyGridSizeButton');
+  applyGridSizeButton.mousePressed(applyCustomGridSize);
 }
 
 function draw() {
@@ -87,6 +91,7 @@ function updateGridOpacity() {
 
 // Initialize the grid with white color
 function initializeGrid() {
+  colors = [];
   for (let i = 0; i < cols; i++) {
     colors[i] = [];
     for (let j = 0; j < rows; j++) {
@@ -138,3 +143,26 @@ function contextMenu(event) {
   return false;
 }
 document.oncontextmenu = contextMenu;
+
+// Function to apply custom grid size
+function applyCustomGridSize() {
+  let newHeight = parseInt(select('#gridHeight').value());
+  let newWidth = parseInt(select('#gridWidth').value());
+  
+  // Calculate new canvas size
+  let canvasSizeHeight = newHeight * gridSize;
+  let canvasSizeWidth = newWidth * gridSize;
+  
+  // Resize the canvas to fit the new grid size
+  resizeCanvas(canvasSizeWidth, canvasSizeHeight);
+  
+  // Update cols and rows based on new grid dimensions
+  cols = newWidth;
+  rows = newHeight;
+  
+  // Reinitialize the grid with the new dimensions
+  initializeGrid();
+  
+  // Redraw the canvas with the updated grid
+  redraw();
+}

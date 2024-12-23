@@ -1,0 +1,29 @@
+1. Undo/Redo Functionality
+Allow users to undo and redo their last actions, which can be very handy during the drawing process.
+
+2. Color Picker Palette
+Provide a palette with a selection of colors for quick access, alongside the custom color picker.
+
+3. Save and Load Projects
+Enable users to save their current project state (grid data) to local storage and load it later. This way, they can continue their artwork at any time.
+
+4. Download as SVG
+In addition to PNG, offer an option to download the artwork as an SVG file for higher quality and scalability.
+
+5. Mirror Drawing Mode
+Implement a mirror drawing mode that mirrors the user's drawing on the other half of the canvas, useful for creating symmetrical designs.
+
+6. Eraser Tool
+Add a dedicated eraser tool to simplify removing colors from the grid.
+
+7. Grid Toggle Button
+Allow users to toggle the visibility of the grid lines on and off with a single button click.
+
+8. Predefined Patterns
+Provide a few predefined patterns or templates that users can start with or get inspiration from.
+
+9. Text Tool
+Allow users to add text to their pixel art, with customizable font and size.
+
+10. Shape Tools
+Add tools to draw basic shapes like circles, squares, and lines, which can be helpful for creating more complex designs.
