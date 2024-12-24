@@ -1,4 +1,4 @@
-let gridSize = 20; // Size of each cell
+let gridSize = 10; // Size of each cell (50% smaller)
 let cols, rows;
 let colors = [];
 let colorPicker; // Declare a color picker variable
@@ -42,6 +42,9 @@ function setup() {
 
 function draw() {
   background(220); // Set a fixed background color
+  
+  // Set the stroke weight to make grid lines thinner
+  strokeWeight(0.5);
 
   // Draw the grid
   for (let i = 0; i < cols; i++) {
@@ -52,10 +55,12 @@ function draw() {
       } else {
         noStroke(); // Hide grid lines
       }
-      rect(i * gridSize, j * gridSize, gridSize, gridSize);
+      rect(i * gridSize + 0.5, j * gridSize + 0.5, gridSize, gridSize);
     }
   }
 }
+
+
 
 function mousePressed() {
   if (!promptActive) {
